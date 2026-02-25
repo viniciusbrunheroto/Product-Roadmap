@@ -7,7 +7,7 @@ interface GetIssueInteractionsParams {
 
 
 export async function getIssueInteractions({issueIds}: GetIssueInteractionsParams) {
-    const url = new URL(`/api/issues/interactions`, clientEnv.VERCEL_URL)
+    const url = new URL(`/api/issues/interactions`, clientEnv.NEXT_PUBLIC_API_URL_VERCEL)
 
     url.searchParams.set('issueIds', issueIds.join(",") )
 

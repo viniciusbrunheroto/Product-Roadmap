@@ -12,7 +12,7 @@ export async function listIssues({search}: ListIssuesParams = {}) {
 
     cacheLife('minutes')
 
-    const url = new URL('/api/issues', clientEnv.VERCEL_URL)
+    const url = new URL('/api/issues', clientEnv.NEXT_PUBLIC_API_URL_VERCEL)
 
     if (search) {
         url.searchParams.set("search", search)
