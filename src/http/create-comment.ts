@@ -14,7 +14,7 @@ interface CreateCommentParams {
 
 
 export async function createComment({issueId, text}: CreateCommentParams) {
-    const url = new URL(`/api/issues/${issueId}/comments`, clientEnv.NEXT_PUBLIC_API_URL)
+    const url = new URL(`/api/issues/${issueId}/comments`, clientEnv.VERCEL_URL)
 
     const incomingHeaders = await headers()
 
