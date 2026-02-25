@@ -33,11 +33,14 @@ const app = new OpenAPIHono<{
   },
 }).basePath("/api");
 
+const allowedOrigin =
+  process.env.BETTER_AUTH_URL ?? "http://localhost:3000";
+
 // CORS middleware for auth routes
 app.use(
   "*",
   cors({
-    origin: "http://localhost:3000",
+    origin: allowedOrigin,
     allowHeaders: ["Content-Type", "Authorization"],
     allowMethods: ["POST", "GET", "OPTIONS"],
     credentials: true,
