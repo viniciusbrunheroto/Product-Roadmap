@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const clientEnvSchema = z.object({
-  VERCEL_URL: z.url().optional().default("http://localhost:3000"),
+  NEXT_PUBLIC_API_URL_VERCEL: z.url().optional().default("http://localhost:3000"),
 });
 
 export const clientEnv = clientEnvSchema.parse(process.env);
