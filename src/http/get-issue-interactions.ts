@@ -1,5 +1,5 @@
 import { IssueInteractionsResponseSchema } from '@/api/routes/schemas/issue-interactions'
-import { clientEnv } from '@/env'
+
 
 interface GetIssueInteractionsParams {
     issueIds: string[]

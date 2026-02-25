@@ -1,5 +1,5 @@
 import {CommentsListResponseSchema} from '@/api/routes/list-issue-comments'
-import { clientEnv } from '@/env'
+
 import { cacheLife, cacheTag } from 'next/cache'
 
 interface ListIssueCommentsParams {

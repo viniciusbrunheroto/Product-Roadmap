@@ -1,5 +1,5 @@
 import {IssuesListResponseSchema} from '@/api/routes/list-issues'
-import { clientEnv } from '@/env'
+
 import { cacheLife } from 'next/cache'
 
 interface ListIssuesParams {
