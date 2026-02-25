@@ -40,7 +40,7 @@ const app = new OpenAPIHono<{
 app.use(
   "*",
   cors({
-    origin: clientEnv.NEXT_PUBLIC_API_URL_VERCEL ?? "http://localhost:3000",
+    origin: process.env.NEXT_PUBLIC_API_URL_VERCEL ?? "http://localhost:3000",
     allowHeaders: ["Content-Type", "Authorization"],
     allowMethods: ["POST", "GET", "OPTIONS"],
     credentials: true,

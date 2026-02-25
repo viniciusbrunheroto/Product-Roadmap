@@ -13,7 +13,7 @@ export async function listIssueComments({issueId}: ListIssueCommentsParams) {
     cacheLife("minutes")
     cacheTag(`issue-comments-${issueId}`)
     
-    const url = new URL(`/api/issues/${issueId}/comments`, clientEnv.NEXT_PUBLIC_API_URL_VERCEL)
+    const url = new URL(`/api/issues/${issueId}/comments`, process.env.NEXT_PUBLIC_API_URL_VERCEL)
 
     const response = await fetch(url)
 

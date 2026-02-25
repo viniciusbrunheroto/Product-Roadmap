@@ -7,7 +7,7 @@ interface ToggleLikeParams {
 
 
 export async function toggleLike({issueId}: ToggleLikeParams) {
-    const url = new URL(`/api/issues/${issueId}/like`, clientEnv.NEXT_PUBLIC_API_URL_VERCEL)
+    const url = new URL(`/api/issues/${issueId}/like`, process.env.NEXT_PUBLIC_API_URL_VERCEL)
 
     const response = await fetch(url, {
         method: 'POST',

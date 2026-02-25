@@ -2,7 +2,7 @@ import "server-only"
 
 
 import { CommentSchema } from '@/api/routes/create-comment'
-import { clientEnv } from '@/env'
+
 import { headers } from 'next/headers'
 import { getCookiesFromHeaders } from "./utils/get-cookies-from-headers"
 import { updateTag } from "next/cache"
@@ -14,7 +14,7 @@ interface CreateCommentParams {
 
 
 export async function createComment({issueId, text}: CreateCommentParams) {
-    const url = new URL(`/api/issues/${issueId}/comments`, clientEnv.NEXT_PUBLIC_API_URL_VERCEL)
+    const url = new URL(`/api/issues/${issueId}/comments`, process.env.NEXT_PUBLIC_API_URL_VERCEL)
 
     const incomingHeaders = await headers()
 

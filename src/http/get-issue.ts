@@ -9,7 +9,7 @@ interface GetIssueParams {
 export async function getIssue({id}: GetIssueParams) {
     "use cache"
     
-    const url = new URL(`/api/issues/${id}`, clientEnv.NEXT_PUBLIC_API_URL_VERCEL)
+    const url = new URL(`/api/issues/${id}`, process.env.NEXT_PUBLIC_API_URL_VERCEL)
 
     const response = await fetch(url)
 
