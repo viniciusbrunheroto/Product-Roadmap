@@ -13,6 +13,8 @@ import { listIssues } from "./routes/list-issues";
 import { toggleIssueLike } from "./routes/toggle-issue-like";
 import { updateComment } from "./routes/update-comment";
 import { updateIssue } from "./routes/update-issue";
+import { clientEnv } from "@/env";
+
 
 const app = new OpenAPIHono<{
   Variables: {
@@ -38,7 +40,7 @@ const app = new OpenAPIHono<{
 app.use(
   "*",
   cors({
-    origin: process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3000",
+    origin: clientEnv.NEXT_PUBLIC_API_URL ?? "http://localhost:3000",
     allowHeaders: ["Content-Type", "Authorization"],
     allowMethods: ["POST", "GET", "OPTIONS"],
     credentials: true,
